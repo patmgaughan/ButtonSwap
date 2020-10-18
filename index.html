@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+	<title>Button Value Switch</title>
+	<script type="text/javascript">
+		
+
+
+		function buttonSwap() {
+			leftBox = document.getElementById("leftVal");
+			b1 = document.getElementById("button");
+			rightBox = document.getElementById("rightVal");
+
+			if(b1.value == "->"){
+				b1.value = "<-";
+				rightBox.value = leftBox.value;
+				leftBox.value = "";
+
+			}else if(b1.value == "<-"){
+				b1.value = "->";
+				leftBox.value = rightBox.value;
+				rightBox.value = "";
+			}
+
+		}
+
+		window.onload = function() {
+
+			b1 = document.getElementById("button");
+			b1.onclick = function(){
+				buttonSwap();
+			}
+		
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Button Switch</h1>
+	<form>
+		<input type="text" value="Click the Button!" id="leftVal">
+		<input type="button" value="->" id="button">
+		<input type="text" value="" id="rightVal">
+
+	</form>
+</body>
